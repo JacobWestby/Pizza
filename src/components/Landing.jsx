@@ -1,6 +1,6 @@
 import { Button, Typography, styled, Stack } from '@mui/material'
 import { Box } from '@mui/system'
-import pizza from '../images/Banner_Pizza.jpg'
+import landing from '../images/landing.jpg'
 import { useTheme } from '@emotion/react'
 
 const Landing = () => {
@@ -24,7 +24,7 @@ const Landing = () => {
         justifyContent: 'center',
         height: '100vh',
         width: '100vw',
-        backgroundImage: `url(${pizza})`,
+        backgroundImage: `url(${landing})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -51,14 +51,33 @@ const Landing = () => {
       zIndex: 2,
     };
 
+    const openHours = {
+      textDecoration: "underline",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      color: "white",
+  }
+
   return (
     <Box sx={base}>
-        <Box sx={flexCenter} height={"30%"} justifyContent={"space-between"}>
+        <Box sx={flexCenter} height={"40%"} justifyContent={"space-between"}>
           <Stack sx={flexCenter} justifyContent={"center"}>
             <Typography variant="h3" fontWeight={"bold"} sx={{fontSize: {xs: 40, sm: 50}}} color="white">Pizzeria Name</Typography>
             <Typography variant="p" color="white" mt={3}>0731234456</Typography>
           </Stack>
           <MenuButton variant="contained">Meny</MenuButton>
+          <Box>
+            <Typography variant="h6" color="inherit" sx={openHours}>Öppetider</Typography>
+            <Stack direction="row" spacing={3} color="white">
+                    <Typography variant="p" color="inherit">Måndag - Fredag</Typography>
+                    <Typography variant="p" color="inherit">11:00 - 20:00</Typography>
+            </Stack>
+            <Stack direction="row" spacing={3} color="white" justifyContent={"space-between"}>
+                    <Typography variant="p" color="inherit">Lördag - Söndag</Typography>
+                    <Typography variant="p" color="inherit">11:00 - 00:00</Typography>
+            </Stack>
+        </Box>
         </Box>
         <Box sx={overlay}>
         </Box>
